@@ -157,3 +157,11 @@ if ( version_compare( PHP_VERSION, '5.3', '>=' ) ) {
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+
+
+add_filter('buddymeet_get_name', 'change_buddymeet_name_callback', 10);
+
+function change_buddymeet_name_callback($name){
+   return 'On Demand Class';
+}
+

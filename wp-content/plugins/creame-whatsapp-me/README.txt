@@ -5,7 +5,7 @@ Tags: whatsapp business, whatsapp, click to chat, button, whatsapp support chat,
 Requires at least: 3.0.1
 Tested up to: 5.6
 Requires PHP: 5.3
-Stable tag: 4.1.4
+Stable tag: 4.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,7 +61,7 @@ To be able to support all your users, wherever they are. Our plugin is **compati
 You choose a color and we customize the entire visual theme of the widget. With Dark Mode display the chat window with dark colors and white text. From settings you can activate it or leave it automatic and detects devices' configuration.
 
 #### 🍾 CSS Triggers.
-Your pages can interact with Join.chat and show the chat window or launch WhatsApp **when user clicks or an item appears on scrolling**. You just need to add a few CSS classes.
+Your pages can interact with Join.chat and show the chat window or launch WhatsApp **when user clicks or an item appears on scrolling**. You just need to add a few CSS classes. [View FAQs](https://wordpress.org/plugins/creame-whatsapp-me/faq/)
 
 #### ⚡ Fast & Light.
 Only load what need when needed. Join.chat is lightweight and follow best coding practices. [See tests report](https://wphive.com/plugins/creame-whatsapp-me/)
@@ -130,6 +130,19 @@ If you need to move up:
 @media (max-width: 480px), (max-width: 767px) and (orientation: landscape) {
   .joinchat { --bottom: 60px; }
 }`
+
+= Shortcodes / Triggers =
+
+Join.chat does not provide any shortcodes, but you can easily link to WhatsApp in two ways:
+
+1. Add an anchor link to `#whatsapp` (open WhastApp directly) or `#joinchat` (show chat window).
+e.g.: add in your menu a custom link with the URL `#whatsapp`
+2. Add a css class to any element, `joinchat_app` (open WhastApp directly) or `joinchat_open` (show chat window).
+e.g.: `<img src="contact.jpg" class="joinchat_open" alt="Contact">`
+
+This works with your phone settings and message with dynamic variables, **even on pages without Join.chat visible**.
+
+For custom WhatsApp links, you can create the url with our **[WhatsApp link generator](https://join.chat/en/whatsapp-link/) free tool** and copy it to your links.
 
 = What about GDPR? =
 
@@ -200,6 +213,14 @@ There is a Javascript event that Join.chat triggers automatically before launch 
 6. Page settings
 
 == Changelog ==
+
+= 4.1.6 =
+* FIX minor css error introduced in v4.1.5
+
+= 4.1.5 =
+* **NEW:** Add links to WhastApp with `#joinchat` or `#whatsapp` in your href. CSS triggers and links work on all pages, **even without Join.chat visible**.
+* **NEW:** Analytics event compatible with Google Analytics Dashboard Plugin for WordPress by MonsterInsights custom tracker name
+* Load images when show button for better Page speed.
 
 = 4.1.4 =
 * **NEW:** PHP 8 & WordPress 5.6 tested & updated
