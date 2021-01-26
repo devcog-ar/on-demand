@@ -107,7 +107,7 @@ class JoinChatUtil {
 			return false;
 		}
 
-		$uploads  = wp_get_upload_dir();
+		$uploads  = wp_upload_dir( null, false );
 		$img_info = pathinfo( $img_path );
 		$new_path = "{$img_info['dirname']}/{$img_info['filename']}-{$width}x{$height}.{$img_info['extension']}";
 
@@ -220,13 +220,16 @@ class JoinChatUtil {
 			)
 		);
 
-		// Convert VAR to regex {VAR}
-		$patterns = array_map(
-			function ( $var ) {
-				return "/\{$var\}/u";
-			},
-			array_keys( $replacements )
-		);
+		// Patterns as regex {VAR}
+		$patterns = array();
+		foreach ( $replacements as $var => $replacement ) {
+			$patterns[] = "/\{$var\}/u";
+		}
+
+		// Prevent malformed json
+		foreach ( $replacements as $var => $replacement ) {
+			$replacements[ $var ] = str_replace( '&quot;', '"', $replacement );
+		}
 
 		return preg_replace( $patterns, $replacements, $string );
 

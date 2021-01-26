@@ -165,3 +165,10 @@ function change_buddymeet_name_callback($name){
    return 'On Demand Class';
 }
 
+function custom_posts_per_page( $query ) {
+
+	if ( $query->is_category('contenidos') ) {
+		set_query_var('posts_per_page', 5);
+	}
+}
+add_action( 'pre_get_posts', 'custom_posts_per_page' );

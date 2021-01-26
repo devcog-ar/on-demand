@@ -71,7 +71,7 @@ class JoinChatAdmin {
 		$this->version     = $version;
 
 		// Updated in get_settings() at 'admin_init' hook
-		$this->enhanced_phone = '17.0.3'; // intl-tel-input version
+		$this->enhanced_phone = '17.0.8'; // intl-tel-input version
 		$this->tabs           = array();
 		$this->settings       = array();
 
@@ -167,6 +167,7 @@ class JoinChatAdmin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    3.0.0
+	 * @since    4.1.4     Added intlTelInput localize.
 	 * @param    string $hook       The id of the page.
 	 * @return   void
 	 */

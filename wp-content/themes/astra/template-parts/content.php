@@ -55,7 +55,7 @@
 				?>
 	>
 
-		<?php astra_entry_content_before(); ?>
+		<?php astra_entry_content_before();  die("aca");?>
 
 		<?php
 			the_content(
