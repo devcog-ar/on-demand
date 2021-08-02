@@ -20,6 +20,8 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', 'D:\laragon\www\ondemand\wp-content\plugins\wp-super-cache/' );
 define( 'DB_NAME', 'ondemand' );
 
 /** MySQL database username */

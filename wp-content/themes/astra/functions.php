@@ -172,3 +172,16 @@ function custom_posts_per_page( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'custom_posts_per_page' );
+
+function my_login_logo_one() { 
+?> 
+<style type="text/css"> 
+body.login div#login h1 a {
+ background-image: url(https://ondemand.com.ar/wp-content/uploads/2020/12/Logo-corto-on-demand-png-699-x-148px.png); 
+padding-bottom: 30px; 
+background-size: 100%;
+width: auto;
+} 
+</style>
+ <?php 
+} add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
